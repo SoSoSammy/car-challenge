@@ -1,29 +1,51 @@
-# Create T3 App
+# Car Challenge
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+<br />
+<p align="center">
+  <a href="[LINK_TO_LIVE_DEMO]">
+    <img width="1913" height="862" alt="image" src="https://github.com/user-attachments/assets/44fdc15f-42f7-47b7-88e6-e0927179c412" />
 
-## What's next? How do I make an app with this?
+  </a>
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+  <h3 align="center">Car Challenge</h3>
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+  <p align="center">
+    A T3-stack web application which displays car listings from a Supabase database.
+    <br />
+    <a href="[LINK_TO_LIVE_DEMO]"><strong>View Demo »</strong></a>
+  </p>
+</p>
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## About the Project
 
-## Learn More
+This project takes data from a Supabase PostgreSQL database and renders it in a webpage.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+**Key Features:**
+* Loading message when data is being fetched
+* Sale price of car displayed in US currency format
+* Tailwind CSS styling
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### A Major Challenge I Overcame
+The trickiest part of this project was integrating all the different components together. At one point my new Prisma schema was not showing up in my context in tRPC, and I was confused since I had updated my Prisma schema to match my Supabase database. I had tried running `npx prisma generate` but faced a weird error. I learned that the error was caused by having my local development server running, so my filesystem had a lock on the file that Prisma needed to change. Once I stopped my server and reran the command, my Prisma Client was updated and I was able to access my schema from the database context in tRPC.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+### Built With
 
-## How do I deploy this?
+[![Next.js][Nextjs-shield]][Nextjs-url]
+[![TypeScript][TypeScript-shield]][TypeScript-url]
+[![tRPC][tRPC-shield]][tRPC-url]
+[![Prisma][Prisma-shield]][Prisma-url]
+[![Tailwind CSS][Tailwind-shield]][Tailwind-url]
+[![Supabase][Supabase-shield]][Supabase-url]
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+[Nextjs-shield]: https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Nextjs-url]: https://nextjs.org/
+[TypeScript-shield]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org
+[tRPC-shield]: https://img.shields.io/badge/tRPC-2596BE?style=for-the-badge&logo=trpc&logoColor=white
+[tRPC-url]: https://trpc.io/
+[Prisma-shield]: https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white
+[Prisma-url]: https://www.prisma.io/
+[Tailwind-shield]: https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
+[Supabase-shield]: https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white
+[Supabase-url]: https://supabase.com/
