@@ -1,10 +1,9 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import { api } from "~/utils/api";
 
 export default function Listings() {
-    const carListings = api.list.list.useQuery();
+    const list = api.list.list.useQuery();
 
     return (
         <>
@@ -18,7 +17,17 @@ export default function Listings() {
                 Car Listings
             </h1>
 
-            <p>{ carListings.data }</p>
+            <ul>
+                {list.data?.map((listItem) => (
+                    <li key={listItem.id}>
+                        <div>ID: {listItem.id}</div>
+                        <div>Make: {listItem.make}</div>
+                        <div>Model: {listItem.model}</div>
+                        <div>Year: {listItem.year}</div>
+                        <div>Price: {listItem.price}</div>    
+                    </li>
+                ))}
+            </ul>
         </main>
         </>
     )
