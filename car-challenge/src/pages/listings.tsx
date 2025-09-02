@@ -17,7 +17,9 @@ export default function Listings() {
                 Car Listings
             </h1>
 
-            <table className="table-auto text-white border-collapse border">
+            {/* Display loading message if still waiting for data, otherwise, display car listings */}
+            {list.isLoading ? ( <p className="text-white">Loading...</p>) : 
+            (<table className="table-auto text-white border-collapse border">
                 <thead>
                     <tr>
                         <th className="border p-2">ID</th>
@@ -38,7 +40,7 @@ export default function Listings() {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table>)}
         </main>
         </>
     )
