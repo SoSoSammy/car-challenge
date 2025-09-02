@@ -2,7 +2,7 @@
 
 <br />
 <p align="center">
-  <a href="[LINK_TO_LIVE_DEMO]">
+  <a href="https://car-challenge.onrender.com/">
     <img width="1913" height="862" alt="image" src="https://github.com/user-attachments/assets/44fdc15f-42f7-47b7-88e6-e0927179c412" />
 
   </a>
@@ -12,7 +12,7 @@
   <p align="center">
     A T3-stack web application which displays car listings from a Supabase database.
     <br />
-    <a href="[LINK_TO_LIVE_DEMO]"><strong>View Demo »</strong></a>
+    <a href="https://car-challenge.onrender.com/"><strong>View Demo »</strong></a>
   </p>
 </p>
 
@@ -27,6 +27,8 @@ This project takes data from a Supabase PostgreSQL database and renders it in a 
 
 ### A Major Challenge I Overcame
 The trickiest part of this project was integrating all the different components together. At one point my new Prisma schema was not showing up in my context in tRPC, and I was confused since I had updated my Prisma schema to match my Supabase database. I had tried running `npx prisma generate` but faced a weird error. I learned that the error was caused by having my local development server running, so my filesystem had a lock on the file that Prisma needed to change. Once I stopped my server and reran the command, my Prisma Client was updated and I was able to access my schema from the database context in tRPC.
+
+Another challenge I faced was deploying the project. I had this error when running `npm run build`: `Type error: Type 'typeof import("/opt/render/project/src/src/pages/api/trpc/[trpc]")' does not satisfy the expected type 'ApiRouteConfig'.`. After researching, I discovered that [this error is specific to Next.js version 15.](https://discord-questions.trpc.io/m/1409997624492294276) It means the tRPC router type doesn't match what Next.js expects. To fix this, I set `ignoreBuildErrors` to `true` in the TypeScript configuration of `next.config.js`, since it seems there is currently not a fix for the error.
 
 ### Built With
 
